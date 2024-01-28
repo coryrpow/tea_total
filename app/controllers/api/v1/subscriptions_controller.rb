@@ -25,6 +25,16 @@ class Api::V1::SubscriptionsController < ApplicationController
     end
   end
 
+  def index
+    begin
+      customer = Customer.find(params[:customer_id])
+      subscriptions = customer.subscriptions
+      render json: SubscriptionSerializer.new(subscriptions), status: 200
+    rescue ActiveRecord::RecordNotFound
+      render json: {message: "Customer does not exist."}, status: 404
+    end
+  end
+
 private 
 
   def fe_params
