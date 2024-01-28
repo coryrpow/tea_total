@@ -9,9 +9,19 @@ class Api::V1::SubscriptionsController < ApplicationController
         price: fe_params[:price],
         )
       tea_subscription = TeaSubscription.create(tea_id: tea.id, subscription_id: subscription.id)
-      render json: { message: "Sucessfully subcribed #{tea.title} to #{customer.first_name}'s account"}, status: 201
+      render json: { message: "Successfully subscribed #{tea.title} to #{customer.first_name}'s account"}, status: 201
     rescue ActiveRecord::RecordNotFound
       render json: { message: "Subscription NOT successful, please create an account or login to an existing account"}, status: 400
+    end
+  end
+
+  def update
+    begin
+      subscription = Subscription.find(params[:subscription_id])
+      subscription.update!(status: params[:status].to_i)
+      render json: {message: "Subscription updated!"}, status: 200
+    rescue ActiveRecord::RecordNotFound
+      render json: {message: "Subscription update failed!"}, status: 404
     end
   end
 
