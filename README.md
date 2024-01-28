@@ -60,18 +60,44 @@ Created by: Cory Powell | [LinkedIn](https://www.linkedin.com/in/coryrpow/)
 
 `POST /api/v1/subscribe`
 
+Note: This response mimics a theoretical front end sending you JSON body of a user subscribing to a tea. An example would look like this:
+```
+{
+        "customer_id": 1,
+        "tea_id": 1,
+        "title": "Single Box",
+        "frequency": 3,
+        "price": 10.30
+      }
+
+```
+#### In order to see how this mock JSON body example would work in Postman:
+- Open Postman and click the `+` button in the upper right hand side
+- In the text box next to the `GET` with the field `Enter URL or past text` enter in the url <your localhost>/api/v0/users
+- Click on the drop down button to the right of the `GET ` and select `POST`
+- Select the `Body` tab, below the url
+- Click the dropdown button to the right of `none` and select `raw`
+- Enter the example body above in to this raw field
+- You are now ready to click the Blue `Send` button and see the response
+
 **Example response:**
 ```
- 
+ {
+    "message": "Successfully subscribed Oolong Opera Tea to Sleepy's account"
+}
 
 ```
 ___
 ### Cancel a customer's tea subscription
 
-`POST "/api/v1/cancel"`
+`PATCH "/api/v1/cancel"`
 
-Note: This response mimics a theoretical front end sending you JSON body of a user registering for the site. An example would look like this:
+Note: This response mimics a theoretical front end sending you JSON body of a user cancelling a subscription they are already subscribed to. An example would look like this:
 ```
+{
+       "subscription_id": "1",
+       "status": "1"
+      }
 
 ```
 #### In order to see how this mock JSON body example would work in Postman:
@@ -86,26 +112,16 @@ Note: This response mimics a theoretical front end sending you JSON body of a us
 
 **Example response:**
 ```
+{
+    "message": "Subscription updated!"
+}
 
 ```
 
 ___
 ### See all of a customer's subscriptions (active and cancelled)
 
-`GET "/api/v1/subscriptions"`
-
-Note: This response mimics a theoretical front end user that has already created an account, sending you JSON body. An example would look like this:
-```
-
-```
-#### In order to see how this mock JSON body example would work in Postman:
-- Open Postman and click the `+` button in the upper right hand side
-- In the text box next to the `GET` with the field `Enter URL or past text` enter in the url <your localhost>/api/v0/sessions
-- Click on the drop down button to the right of the `GET ` and select `POST`
-- Select the `Body` tab, below the url
-- Click the dropdown button to the right of `none` and select `raw`
-- Enter the example body above in to this raw field
-- You are now ready to click the Blue `Send` button and see the response
+`GET "/api/v1/customers/:id/subscriptions"`
 
 
 **Example response:**

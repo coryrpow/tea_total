@@ -8,7 +8,7 @@ RSpec.describe "Customer Subscription endpoints" do
       fe_params = {
         "customer_id": @cust.id,
         "tea_id": @tea.id,
-        "title": "Oolong Opera",
+        "title": "Single Box",
         "frequency": 3,
         "price": 10.30
       }
@@ -19,7 +19,7 @@ RSpec.describe "Customer Subscription endpoints" do
       expect(response.status).to eq(201)
 
       sub_response = JSON.parse(response.body, symbolize_names: true)
-      expect(sub_response[:message]).to eq("Sucessfully subcribed #{@tea.title} to #{@cust.first_name}'s account")
+      expect(sub_response[:message]).to eq("Successfully subscribed #{@tea.title} to #{@cust.first_name}'s account")
     end
 
     it "returns an error if the customer does not exist" do
@@ -28,7 +28,7 @@ RSpec.describe "Customer Subscription endpoints" do
       fe_params = {
         "customer_id": 4,
         "tea_id": @tea.id,
-        "title": "Oolong Opera",
+        "title": "Single Box",
         "frequency": 3,
         "price": 10.30
       }
