@@ -1,19 +1,16 @@
 # Tea Total
 Created by: Cory Powell | [LinkedIn](https://www.linkedin.com/in/coryrpow/)
 ## Directory
-<!-- - [Project Description](https://github.com/coryrpow/sweater_weather?tab=readme-ov-file#project-description)
-- [Dates](https://github.com/coryrpow/sweater_weather?tab=readme-ov-file#datess)
-- [Built Using](https://github.com/coryrpow/sweater_weather?tab=readme-ov-file#built-using)
-- [Testing](https://github.com/coryrpow/sweater_weather?tab=readme-ov-file#testing)
-- [Installation Instructions](https://github.com/coryrpow/sweater_weather?tab=readme-ov-file#installation-instructions)
-- [Requirements](https://github.com/coryrpow/sweater_weather?tab=readme-ov-file#requirements)
-- [Learning Goals](https://github.com/coryrpow/sweater_weather?tab=readme-ov-file#learning-goals)
-- [API Documentation](https://github.com/coryrpow/sweater_weather?tab=readme-ov-file#api-documentation)
-  - [GET forecast](https://github.com/coryrpow/sweater_weather?tab=readme-ov-file#retrieve-weather-forecast-for-a-city)
-  - [POST users](https://github.com/coryrpow/sweater_weather?tab=readme-ov-file#user-registration)
-  - [POST login](https://github.com/coryrpow/sweater_weather?tab=readme-ov-file#login)
-  - [POST Road Trip](https://github.com/coryrpow/sweater_weather?tab=readme-ov-file#road-trip) -->
-
+- [Project Description](https://github.com/coryrpow/tea_total?tab=readme-ov-file#project-description)
+- [Built Using](https://github.com/coryrpow/tea_total?tab=readme-ov-file#built-using)
+- [Testing](https://github.com/coryrpow/tea_total?tab=readme-ov-file#testing)
+- [Database Visualization](https://github.com/coryrpow/tea_total?tab=readme-ov-file#database-visualization)
+- [Installation Instructions](https://github.com/coryrpow/tea_total?tab=readme-ov-file#installation-instructions)
+- [Learning Goals](https://github.com/coryrpow/tea_total?tab=readme-ov-file#learning-goals)
+- [API Documentation](https://github.com/coryrpow/tea_total?tab=readme-ov-file#api-documentation)
+  - [POST subscribe](https://github.com/coryrpow/tea_total?tab=readme-ov-file#subscribe-a-customer-to-a-tea-subscription)
+  - [PATCH cancel](https://github.com/coryrpow/tea_total?tab=readme-ov-file#cancel-a-customers-tea-subscription)
+  - [GET subscription_all](https://github.com/coryrpow/tea_total?tab=readme-ov-file#see-all-of-a-customers-subscriptions-active-and-cancelled)
   
 ## Project Description
 > This application serves as the back-end of an app that:
@@ -29,7 +26,7 @@ Created by: Cory Powell | [LinkedIn](https://www.linkedin.com/in/coryrpow/)
 - [RSpec 3.12](https://github.com/rspec/rspec-rails)
 - [Capybara](https://github.com/teamcapybara/capybara)
 
-## Database visualization
+## Database Visualization
 ![Tea Total Schema Visualization](https://gist.github.com/assets/132625822/6b21f5fe-ea09-416a-9abf-73e024d00d60)
 
 ## Installation Instructions
@@ -39,10 +36,6 @@ Created by: Cory Powell | [LinkedIn](https://www.linkedin.com/in/coryrpow/)
  - `bundle install`   
  - `rails db:{drop,create,migrate,seed}`
  - `rails server` 
-
-
-## Requirements
-
 
 ## Learning Goals
 - A strong understanding of Rails
